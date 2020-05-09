@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<script>
+
+    function computerPlay(){
+
+        let num = 2;
+        let computerChoice = Math.floor(Math.random()*num)+1;
+
+        if(computerChoice==1){
+
+            return "rock";
+
+        }
+        if(computerChoice==2)
+            return "paper";
+
+        if(computerChoice==3)
+            return "scissors";
+
+    }
+
+    function gamePlay(personChoice, computerChoice){
+
+
+        personChoice = personChoice.toLowerCase();
+        let outcom; 
+
+        switch(personChoice){
+
+            case 'rock': switch(computerChoice){
+
+                            case 'rock':
+
+                                    outcom = "tie";
+                                    break;
+
+                            case 'paper':
+                                    outcom = "lose";
+                                    break;
+
+                             case 'scissors':
+                                    outcom = "win";  
+                                    break;
+
+
+                        }
+
+                        break;
+
+            case 'paper': switch(computerChoice){
+
+                        case 'rock':
+                        outcom = "win";
+                        break;
+
+                        case 'paper': outcom = "tie";
+                        break;
+
+
+                        case 'scissors': outcom = "lose";
+                        break;
+
+
+            }  
+                    break;
+
+            case 'scissors':      switch(computerChoice){
+
+                                case 'rock':
+                                outcom = "lose";
+                                break;
+
+                                case 'paper': outcom = "win";
+                                break;
+
+
+                                case 'scissors': outcom = "tie";
+                                break;
+
+
+                    }     
+
+
+        } 
+
+            let str;
+        if(outcom=="tie"){
+                str = "Tie! " + personChoice + " and " + computerChoice;
+            
+
+        }
+        if(outcom == "lose"){
+
+                str = "You Lose! " + computerChoice + " beats " + personChoice;
+
+        }
+        if(outcom=="win"){
+
+            str = "You win! " + personChoice + " beats " + computerChoice;
+
+        }
+
+            return str;
+
+    }
+
+
+    function game(){
+
+        let pch, cch;
+        console.log("Welcome to Rock Paper Scissors game. This will have 5 rounds");
+        for(let i = 0; i<5; i++){
+
+            pch = prompt("Enter your choice: ");
+            cch = computerPlay();
+
+            console.log(gamePlay(pch, cch));
+
+        }
+
+    }
+
+    game();
+
+
+</script>
