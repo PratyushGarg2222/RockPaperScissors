@@ -1,0 +1,1 @@
+This project is from the Odin project and it makes a rock paper scissors game in the console for now. Basic functioning of JavaScript is employed, with random number generator
