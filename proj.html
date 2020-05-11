@@ -1,126 +1,48 @@
 <!DOCTYPE html>
-<script>
+<head>
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" type="text/css" href="styling.css">
+</head>
+<body>
 
-    function computerPlay(){
+    <h1 id = "mainheading">Rock Paper Scissors Game</h1>
 
-        let num = 2;
-        let computerChoice = Math.floor(Math.random()*num)+1;
+    <h4 id = "mainheading">This game continues till 5 rounds</h4>
 
-        if(computerChoice==1){
+    <br><br>
 
-            return "rock";
+    <div id = "buttonList">
 
-        }
-        if(computerChoice==2)
-            return "paper";
+        <button class = "butto">Rock</button>
+        <button class = "butto">Paper</button>
+        <button class = "butto">Scissors</button>
 
-        if(computerChoice==3)
-            return "scissors";
+    </div>
 
-    }
+    <br>
 
-    function gamePlay(personChoice, computerChoice){
+    <div class = "score">
 
+        <p id = "scoreText">
+            <span id = "PlayerScore">0</span> - <span id = "CompScore">0</span>
+        </p>
 
-        personChoice = personChoice.toLowerCase();
-        let outcom; 
+    </div>
 
-        switch(personChoice){
+    <div class= "score">
 
-            case 'rock': switch(computerChoice){
+        <p id = "roundResult">
+        </p>
 
-                            case 'rock':
+    </div>
 
-                                    outcom = "tie";
-                                    break;
+    <br>
 
-                            case 'paper':
-                                    outcom = "lose";
-                                    break;
+    <div class = "score">
+    <p id = "resultText"></p>
+    </div>
 
-                             case 'scissors':
-                                    outcom = "win";  
-                                    break;
+</body>
 
-
-                        }
-
-                        break;
-
-            case 'paper': switch(computerChoice){
-
-                        case 'rock':
-                        outcom = "win";
-                        break;
-
-                        case 'paper': outcom = "tie";
-                        break;
-
-
-                        case 'scissors': outcom = "lose";
-                        break;
-
-
-            }  
-                    break;
-
-            case 'scissors':      switch(computerChoice){
-
-                                case 'rock':
-                                outcom = "lose";
-                                break;
-
-                                case 'paper': outcom = "win";
-                                break;
-
-
-                                case 'scissors': outcom = "tie";
-                                break;
-
-
-                    }     
-
-
-        } 
-
-            let str;
-        if(outcom=="tie"){
-                str = "Tie! " + personChoice + " and " + computerChoice;
-            
-
-        }
-        if(outcom == "lose"){
-
-                str = "You Lose! " + computerChoice + " beats " + personChoice;
-
-        }
-        if(outcom=="win"){
-
-            str = "You win! " + personChoice + " beats " + computerChoice;
-
-        }
-
-            return str;
-
-    }
-
-
-    function game(){
-
-        let pch, cch;
-        console.log("Welcome to Rock Paper Scissors game. This will have 5 rounds");
-        for(let i = 0; i<5; i++){
-
-            pch = prompt("Enter your choice: ");
-            cch = computerPlay();
-
-            console.log(gamePlay(pch, cch));
-
-        }
-
-    }
-
-    game();
-
-
+<script src = "scrip.js">
 </script>
